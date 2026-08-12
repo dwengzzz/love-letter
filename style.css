@@ -1,0 +1,302 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #ffe4ec, #fff7f9);
+  overflow-x: hidden;
+}
+
+/* ENVELOPE SCREEN */
+
+#envelope-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.envelope {
+  width: 230px;
+  height: 160px;
+  background: #f8a9bd;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 115px solid transparent;
+  border-right: 115px solid transparent;
+  border-top: 85px solid #f58da9;
+  z-index: 2;
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-left: 115px solid #f79db4;
+  border-right: 115px solid #f79db4;
+  border-top: 80px solid transparent;
+}
+
+.heart {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 38px;
+}
+
+#openBtn {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: #e75480;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(231, 84, 128, 0.3);
+  transition: 0.25s;
+}
+
+#openBtn:hover {
+  transform: scale(1.05);
+  background: #d94370;
+}
+
+/* LETTER */
+
+#letter-screen {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+.card {
+  width: min(500px, 94vw);
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 25px;
+  padding: 35px 28px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #d94b76;
+  margin-top: 15px;
+}
+
+p {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.ending {
+  margin-top: 25px;
+  font-style: italic;
+  color: #d94b76;
+}
+
+/* SINGLE CARNATION */
+
+.flower-container {
+  position: relative;
+  width: 160px;
+  height: 230px;
+  margin: 0 auto;
+  transform-origin: bottom center;
+  animation: flowerSway 3.5s ease-in-out infinite;
+}
+
+@keyframes flowerSway {
+  0% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(4deg);
+  }
+
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* STEM */
+
+.stem {
+  position: absolute;
+  width: 7px;
+  height: 145px;
+  background: #4d9655;
+  left: 77px;
+  top: 75px;
+  border-radius: 10px;
+}
+
+/* LEAVES */
+
+.leaf {
+  position: absolute;
+  width: 58px;
+  height: 20px;
+  background: #5da866;
+  border-radius: 100% 0 100% 0;
+}
+
+.leaf-left {
+  left: 22px;
+  top: 135px;
+  transform: rotate(25deg);
+}
+
+.leaf-right {
+  left: 78px;
+  top: 160px;
+  transform: rotate(-25deg);
+}
+
+/* CARNATION HEAD */
+
+.carnation {
+  position: absolute;
+  width: 115px;
+  height: 105px;
+  left: 22px;
+  top: 0;
+  animation: flowerBob 2.5s ease-in-out infinite;
+}
+
+@keyframes flowerBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* PETALS */
+
+.petal {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #ef7898;
+  border-radius: 55% 45% 60% 40%;
+  box-shadow:
+    inset 0 0 7px rgba(255, 255, 255, 0.35),
+    0 2px 5px rgba(180, 70, 100, 0.15);
+}
+
+.petal1 {
+  left: 28px;
+  top: 0;
+  transform: rotate(-10deg);
+}
+
+.petal2 {
+  left: 48px;
+  top: 8px;
+  transform: rotate(35deg);
+}
+
+.petal3 {
+  left: 55px;
+  top: 28px;
+  transform: rotate(75deg);
+}
+
+.petal4 {
+  left: 43px;
+  top: 45px;
+  transform: rotate(120deg);
+}
+
+.petal5 {
+  left: 20px;
+  top: 50px;
+  transform: rotate(165deg);
+}
+
+.petal6 {
+  left: 2px;
+  top: 38px;
+  transform: rotate(215deg);
+}
+
+.petal7 {
+  left: 0;
+  top: 15px;
+  transform: rotate(260deg);
+}
+
+.petal8 {
+  left: 15px;
+  top: 5px;
+  transform: rotate(300deg);
+}
+
+.petal9 {
+  left: 25px;
+  top: 18px;
+  width: 65px;
+  height: 55px;
+  background: #f28aa6;
+  transform: rotate(20deg);
+}
+
+.petal10 {
+  left: 28px;
+  top: 25px;
+  width: 58px;
+  height: 52px;
+  background: #e96c91;
+  transform: rotate(150deg);
+}
+
+/* FLOWER CENTER */
+
+.flower-center {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 44px;
+  top: 36px;
+  background: #d95378;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: inset 0 0 5px rgba(120, 30, 60, 0.35);
+}
